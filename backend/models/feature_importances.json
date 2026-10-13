@@ -1,0 +1,330 @@
+{
+  "CAD": [
+    {
+      "feature": "Typical Chest Pain",
+      "importance": 0.95651
+    },
+    {
+      "feature": "Region RWMA",
+      "importance": 0.59318
+    },
+    {
+      "feature": "Age",
+      "importance": 0.5927
+    },
+    {
+      "feature": "DM",
+      "importance": 0.47305
+    },
+    {
+      "feature": "TG",
+      "importance": 0.46287
+    },
+    {
+      "feature": "Tinversion",
+      "importance": 0.42201
+    },
+    {
+      "feature": "HTN",
+      "importance": 0.39552
+    },
+    {
+      "feature": "FH",
+      "importance": 0.38169
+    },
+    {
+      "feature": "St Elevation",
+      "importance": 0.28796
+    },
+    {
+      "feature": "PR",
+      "importance": 0.24862
+    },
+    {
+      "feature": "Dyspnea_N",
+      "importance": 0.24393
+    },
+    {
+      "feature": "Dyspnea_Y",
+      "importance": 0.24369
+    },
+    {
+      "feature": "Nonanginal_N",
+      "importance": 0.23687
+    },
+    {
+      "feature": "Nonanginal_Y",
+      "importance": 0.23663
+    },
+    {
+      "feature": "EF-TTE",
+      "importance": 0.23155
+    },
+    {
+      "feature": "BP",
+      "importance": 0.22977
+    },
+    {
+      "feature": "Q Wave",
+      "importance": 0.22887
+    },
+    {
+      "feature": "St Depression",
+      "importance": 0.21164
+    },
+    {
+      "feature": "ESR",
+      "importance": 0.21123
+    },
+    {
+      "feature": "FBS",
+      "importance": 0.18019
+    }
+  ],
+  "LAD": [
+    {
+      "feature": "Typical Chest Pain",
+      "importance": 0.08084
+    },
+    {
+      "feature": "Region RWMA",
+      "importance": 0.08002
+    },
+    {
+      "feature": "EF-TTE",
+      "importance": 0.07238
+    },
+    {
+      "feature": "Age",
+      "importance": 0.05433
+    },
+    {
+      "feature": "Atypical_N",
+      "importance": 0.04887
+    },
+    {
+      "feature": "Atypical_Y",
+      "importance": 0.04375
+    },
+    {
+      "feature": "FBS",
+      "importance": 0.03559
+    },
+    {
+      "feature": "ESR",
+      "importance": 0.03509
+    },
+    {
+      "feature": "TG",
+      "importance": 0.03389
+    },
+    {
+      "feature": "Neut",
+      "importance": 0.03116
+    },
+    {
+      "feature": "Lymph",
+      "importance": 0.03041
+    },
+    {
+      "feature": "BMI",
+      "importance": 0.02873
+    },
+    {
+      "feature": "Weight",
+      "importance": 0.02599
+    },
+    {
+      "feature": "Na",
+      "importance": 0.02398
+    },
+    {
+      "feature": "Length",
+      "importance": 0.02351
+    },
+    {
+      "feature": "LDL",
+      "importance": 0.0234
+    },
+    {
+      "feature": "PLT",
+      "importance": 0.02146
+    },
+    {
+      "feature": "BUN",
+      "importance": 0.02047
+    },
+    {
+      "feature": "WBC",
+      "importance": 0.01912
+    },
+    {
+      "feature": "HB",
+      "importance": 0.0189
+    }
+  ],
+  "LCX": [
+    {
+      "feature": "Age",
+      "importance": 0.61416
+    },
+    {
+      "feature": "Typical Chest Pain",
+      "importance": 0.52614
+    },
+    {
+      "feature": "Na",
+      "importance": 0.33042
+    },
+    {
+      "feature": "FH",
+      "importance": 0.2101
+    },
+    {
+      "feature": "TG",
+      "importance": 0.20492
+    },
+    {
+      "feature": "PLT",
+      "importance": 0.19824
+    },
+    {
+      "feature": "DM",
+      "importance": 0.19706
+    },
+    {
+      "feature": "Function Class",
+      "importance": 0.19299
+    },
+    {
+      "feature": "FBS",
+      "importance": 0.18276
+    },
+    {
+      "feature": "Systolic Murmur_Y",
+      "importance": 0.1775
+    },
+    {
+      "feature": "Systolic Murmur_N",
+      "importance": 0.17692
+    },
+    {
+      "feature": "CR",
+      "importance": 0.1753
+    },
+    {
+      "feature": "VHD_mild",
+      "importance": 0.17422
+    },
+    {
+      "feature": "EX-Smoker",
+      "importance": 0.17253
+    },
+    {
+      "feature": "Current Smoker",
+      "importance": 0.14972
+    },
+    {
+      "feature": "BP",
+      "importance": 0.14554
+    },
+    {
+      "feature": "Sex_Fmale",
+      "importance": 0.13384
+    },
+    {
+      "feature": "Sex_Male",
+      "importance": 0.13325
+    },
+    {
+      "feature": "LDL",
+      "importance": 0.13111
+    },
+    {
+      "feature": "Length",
+      "importance": 0.12255
+    }
+  ],
+  "RCA": [
+    {
+      "feature": "DM",
+      "importance": 0.55391
+    },
+    {
+      "feature": "Age",
+      "importance": 0.46513
+    },
+    {
+      "feature": "Typical Chest Pain",
+      "importance": 0.3497
+    },
+    {
+      "feature": "ESR",
+      "importance": 0.32974
+    },
+    {
+      "feature": "Sex_Fmale",
+      "importance": 0.29915
+    },
+    {
+      "feature": "Sex_Male",
+      "importance": 0.29894
+    },
+    {
+      "feature": "TG",
+      "importance": 0.28818
+    },
+    {
+      "feature": "Function Class",
+      "importance": 0.26279
+    },
+    {
+      "feature": "Dyspnea_Y",
+      "importance": 0.2609
+    },
+    {
+      "feature": "Dyspnea_N",
+      "importance": 0.26069
+    },
+    {
+      "feature": "Neut",
+      "importance": 0.24493
+    },
+    {
+      "feature": "BUN",
+      "importance": 0.23884
+    },
+    {
+      "feature": "Poor R Progression_N",
+      "importance": 0.18886
+    },
+    {
+      "feature": "Poor R Progression_Y",
+      "importance": 0.18865
+    },
+    {
+      "feature": "HTN",
+      "importance": 0.17437
+    },
+    {
+      "feature": "HDL",
+      "importance": 0.16821
+    },
+    {
+      "feature": "K",
+      "importance": 0.15605
+    },
+    {
+      "feature": "FH",
+      "importance": 0.15589
+    },
+    {
+      "feature": "CRF_Y",
+      "importance": 0.14968
+    },
+    {
+      "feature": "CRF_N",
+      "importance": 0.14947
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "features": [
+    "Age",
+    "Weight",
+    "Length",
+    "Sex",
+    "BMI",
+    "DM",
+    "HTN",
+    "Current Smoker",
+    "EX-Smoker",
+    "FH",
+    "Obesity",
+    "CRF",
+    "CVA",
+    "Airway disease",
+    "Thyroid Disease",
+    "CHF",
+    "DLP",
+    "BP",
+    "PR",
+    "Edema",
+    "Weak Peripheral Pulse",
+    "Lung rales",
+    "Systolic Murmur",
+    "Diastolic Murmur",
+    "Typical Chest Pain",
+    "Dyspnea",
+    "Function Class",
+    "Atypical",
+    "Nonanginal",
+    "LowTH Ang",
+    "Q Wave",
+    "St Elevation",
+    "St Depression",
+    "Tinversion",
+    "LVH",
+    "Poor R Progression",
+    "BBB",
+    "FBS",
+    "CR",
+    "TG",
+    "LDL",
+    "HDL",
+    "BUN",
+    "ESR",
+    "HB",
+    "K",
+    "Na",
+    "WBC",
+    "Lymph",
+    "Neut",
+    "PLT",
+    "EF-TTE",
+    "Region RWMA",
+    "VHD"
+  ],
+  "numeric_features": [
+    "Age",
+    "Weight",
+    "Length",
+    "BMI",
+    "DM",
+    "HTN",
+    "Current Smoker",
+    "EX-Smoker",
+    "FH",
+    "BP",
+    "PR",
+    "Edema",
+    "Typical Chest Pain",
+    "Function Class",
+    "Q Wave",
+    "St Elevation",
+    "St Depression",
+    "Tinversion",
+    "FBS",
+    "CR",
+    "TG",
+    "LDL",
+    "HDL",
+    "BUN",
+    "ESR",
+    "HB",
+    "K",
+    "Na",
+    "WBC",
+    "Lymph",
+    "Neut",
+    "PLT",
+    "EF-TTE",
+    "Region RWMA"
+  ],
+  "categorical_features": [
+    "Sex",
+    "Obesity",
+    "CRF",
+    "CVA",
+    "Airway disease",
+    "Thyroid Disease",
+    "CHF",
+    "DLP",
+    "Weak Peripheral Pulse",
+    "Lung rales",
+    "Systolic Murmur",
+    "Diastolic Murmur",
+    "Dyspnea",
+    "Atypical",
+    "Nonanginal",
+    "LowTH Ang",
+    "LVH",
+    "Poor R Progression",
+    "BBB",
+    "VHD"
+  ],
+  "feature_details": {
+    "Age": {
+      "type": "numeric",
+      "min": 30.0,
+      "max": 86.0,
+      "mean": 58.9,
+      "median": 58.0,
+      "default": 58.0
+    },
+    "Weight": {
+      "type": "numeric",
+      "min": 48.0,
+      "max": 120.0,
+      "mean": 73.83,
+      "median": 74.0,
+      "default": 74.0
+    },
+    "Length": {
+      "type": "numeric",
+      "min": 140.0,
+      "max": 188.0,
+      "mean": 164.72,
+      "median": 165.0,
+      "default": 165.0
+    },
+    "Sex": {
+      "type": "categorical",
+      "options": [
+        "Male",
+        "Fmale"
+      ],
+      "default": "Male"
+    },
+    "BMI": {
+      "type": "numeric",
+      "min": 18.115412710007302,
+      "max": 40.90065778377467,
+      "mean": 27.25,
+      "median": 26.78,
+      "default": 26.78
+    },
+    "DM": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "HTN": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.59,
+      "median": 1.0,
+      "default": 1.0
+    },
+    "Current Smoker": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.21,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "EX-Smoker": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.03,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "FH": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.16,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "Obesity": {
+      "type": "categorical",
+      "options": [
+        "Y",
+        "N"
+      ],
+      "default": "Y"
+    },
+    "CRF": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "CVA": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Airway disease": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Thyroid Disease": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "CHF": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "DLP": {
+      "type": "categorical",
+      "options": [
+        "Y",
+        "N"
+      ],
+      "default": "Y"
+    },
+    "BP": {
+      "type": "numeric",
+      "min": 90.0,
+      "max": 190.0,
+      "mean": 129.55,
+      "median": 130.0,
+      "default": 130.0
+    },
+    "PR": {
+      "type": "numeric",
+      "min": 50.0,
+      "max": 110.0,
+      "mean": 75.14,
+      "median": 70.0,
+      "default": 70.0
+    },
+    "Edema": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.04,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "Weak Peripheral Pulse": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Lung rales": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Systolic Murmur": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Diastolic Murmur": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Typical Chest Pain": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.54,
+      "median": 1.0,
+      "default": 1.0
+    },
+    "Dyspnea": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Function Class": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 3.0,
+      "mean": 0.66,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "Atypical": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Nonanginal": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "LowTH Ang": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Q Wave": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.05,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "St Elevation": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.05,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "St Depression": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.23,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "Tinversion": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "LVH": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "Poor R Progression": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "Y"
+      ],
+      "default": "N"
+    },
+    "BBB": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "LBBB",
+        "RBBB"
+      ],
+      "default": "N"
+    },
+    "FBS": {
+      "type": "numeric",
+      "min": 62.0,
+      "max": 400.0,
+      "mean": 119.18,
+      "median": 98.0,
+      "default": 98.0
+    },
+    "CR": {
+      "type": "numeric",
+      "min": 0.5,
+      "max": 2.2,
+      "mean": 1.06,
+      "median": 1.0,
+      "default": 1.0
+    },
+    "TG": {
+      "type": "numeric",
+      "min": 37.0,
+      "max": 1050.0,
+      "mean": 150.34,
+      "median": 122.0,
+      "default": 122.0
+    },
+    "LDL": {
+      "type": "numeric",
+      "min": 18.0,
+      "max": 232.0,
+      "mean": 104.64,
+      "median": 100.0,
+      "default": 100.0
+    },
+    "HDL": {
+      "type": "numeric",
+      "min": 15.9,
+      "max": 111.0,
+      "mean": 40.23,
+      "median": 39.0,
+      "default": 39.0
+    },
+    "BUN": {
+      "type": "numeric",
+      "min": 6.0,
+      "max": 52.0,
+      "mean": 17.5,
+      "median": 16.0,
+      "default": 16.0
+    },
+    "ESR": {
+      "type": "numeric",
+      "min": 1.0,
+      "max": 90.0,
+      "mean": 19.46,
+      "median": 15.0,
+      "default": 15.0
+    },
+    "HB": {
+      "type": "numeric",
+      "min": 8.9,
+      "max": 17.6,
+      "mean": 13.15,
+      "median": 13.2,
+      "default": 13.2
+    },
+    "K": {
+      "type": "numeric",
+      "min": 3.0,
+      "max": 6.6,
+      "mean": 4.23,
+      "median": 4.2,
+      "default": 4.2
+    },
+    "Na": {
+      "type": "numeric",
+      "min": 128.0,
+      "max": 156.0,
+      "mean": 141.0,
+      "median": 141.0,
+      "default": 141.0
+    },
+    "WBC": {
+      "type": "numeric",
+      "min": 3700.0,
+      "max": 18000.0,
+      "mean": 7562.05,
+      "median": 7100.0,
+      "default": 7100.0
+    },
+    "Lymph": {
+      "type": "numeric",
+      "min": 7.0,
+      "max": 60.0,
+      "mean": 32.4,
+      "median": 32.0,
+      "default": 32.0
+    },
+    "Neut": {
+      "type": "numeric",
+      "min": 32.0,
+      "max": 89.0,
+      "mean": 60.15,
+      "median": 60.0,
+      "default": 60.0
+    },
+    "PLT": {
+      "type": "numeric",
+      "min": 25.0,
+      "max": 742.0,
+      "mean": 221.49,
+      "median": 210.0,
+      "default": 210.0
+    },
+    "EF-TTE": {
+      "type": "numeric",
+      "min": 15.0,
+      "max": 60.0,
+      "mean": 47.23,
+      "median": 50.0,
+      "default": 50.0
+    },
+    "Region RWMA": {
+      "type": "numeric",
+      "min": 0.0,
+      "max": 4.0,
+      "mean": 0.62,
+      "median": 0.0,
+      "default": 0.0
+    },
+    "VHD": {
+      "type": "categorical",
+      "options": [
+        "N",
+        "mild",
+        "Severe",
+        "Moderate"
+      ],
+      "default": "N"
+    }
+  }
+}
