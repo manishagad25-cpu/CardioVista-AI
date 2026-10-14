@@ -26,7 +26,7 @@ import {
   FileDown
 } from 'lucide-react';
 
-const API_BASE = '/api';
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/+$/, '');
 
 const DEFAULT_PATIENT: PatientInput = {
   Age: 58.0,
