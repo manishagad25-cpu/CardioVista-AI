@@ -1,6 +1,6 @@
 import os
 from typing import Dict, Any, Optional
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, APIRouter, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from .schemas import PatientInput, PredictionResponse, ExplanationResponse
 from .model_loader import manager, TARGET_CONFIG
@@ -11,14 +11,30 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for frontend Vite development & production
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Configure CORS for local development and deployed frontend (e.g., Vercel)
+raw_cors = os.getenv("CORS_ORIGINS", "")
+if raw_cors.strip():
+    allowed_origins = [o.strip() for o in raw_cors.split(",") if o.strip()]
+    for local_url in ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]:
+        if local_url not in allowed_origins:
+            allowed_origins.append(local_url)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=allowed_origins,
+        allow_origin_regex=r"https://.*\.vercel\.app",
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+else:
+    # Public hackathon demo default: allow all origins without credential requirement
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=False,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 MEDICAL_DISCLAIMER = (
     "CardioVista AI is an educational and research prototype. Its predictions are not a medical diagnosis "
@@ -26,7 +42,19 @@ MEDICAL_DISCLAIMER = (
     "delay professional medical care."
 )
 
-@app.get("/health", summary="Application and model health check")
+api_router = APIRouter()
+ 
+@api_router.get("/", summary="CardioVista AI service overview and health status")
+def root():
+    return {
+        "service": "CardioVista AI API",
+        "status": "online",
+        "docs_url": "/docs",
+        "health_url": "/health",
+        "models_loaded": manager.is_loaded
+    }
+
+@api_router.get("/health", summary="Application and model health check")
 def health():
     return {
         "status": "healthy",
@@ -36,7 +64,7 @@ def health():
         "disclaimer": MEDICAL_DISCLAIMER
     }
 
-@app.get("/model-info", summary="Supported targets, feature requirements, and model metadata")
+@api_router.get("/model-info", summary="Supported targets, feature requirements, and model metadata")
 def model_info():
     return {
         "supported_targets": TARGET_CONFIG,
@@ -49,7 +77,7 @@ def model_info():
         "disclaimer": MEDICAL_DISCLAIMER
     }
 
-@app.get("/metrics", summary="Model evaluation metrics and benchmarks")
+@api_router.get("/metrics", summary="Model evaluation metrics and benchmarks")
 def metrics():
     if not manager.metrics:
         raise HTTPException(status_code=503, detail="Metrics not available. Ensure models are trained.")
@@ -60,7 +88,7 @@ def metrics():
         "disclaimer": MEDICAL_DISCLAIMER
     }
 
-@app.post("/predict", response_model=PredictionResponse, summary="Predict CAD and coronary branch stenosis")
+@api_router.post("/predict", response_model=PredictionResponse, summary="Predict CAD and coronary branch stenosis")
 def predict(patient: PatientInput):
     try:
         patient_data = patient.model_dump(by_alias=True)
@@ -69,7 +97,7 @@ def predict(patient: PatientInput):
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Prediction error: {str(e)}")
 
-@app.post("/explain", response_model=ExplanationResponse, summary="Feature contributions and explanations")
+@api_router.post("/explain", response_model=ExplanationResponse, summary="Feature contributions and explanations")
 def explain(target: str = Query("CAD", description="Target to explain: CAD, LAD, LCX, or RCA"), patient: Optional[PatientInput] = None):
     try:
         patient_data = patient.model_dump(by_alias=True) if patient else None
@@ -78,7 +106,7 @@ def explain(target: str = Query("CAD", description="Target to explain: CAD, LAD,
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Explanation error: {str(e)}")
 
-@app.get("/example-patients", summary="Illustrative real dataset example cases")
+@api_router.get("/example-patients", summary="Illustrative real dataset example cases")
 def example_patients():
     """
     Returns authentic representative example profiles from the verified Z-Alizadeh Sani dataset
@@ -138,3 +166,7 @@ def example_patients():
         }
     }
     return examples
+
+# Mount API router at both root ("/") and "/api" prefix for seamless compatibility
+app.include_router(api_router)
+app.include_router(api_router, prefix="/api")

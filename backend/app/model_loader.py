@@ -1,9 +1,12 @@
 import os
 import json
+import logging
 import joblib
 import pandas as pd
 import numpy as np
 from typing import Dict, Any, Tuple
+
+logger = logging.getLogger("cardiovista.model_loader")
 
 MODELS_DIR = os.path.join(os.path.dirname(__file__), "..", "models")
 

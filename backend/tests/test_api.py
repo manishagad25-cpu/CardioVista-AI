@@ -4,6 +4,13 @@ from backend.app.main import app
 
 client = TestClient(app)
 
+def test_root():
+    response = client.get("/")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "online"
+    assert data["models_loaded"] is True
+
 def test_health():
     response = client.get("/health")
     assert response.status_code == 200
@@ -15,6 +22,12 @@ def test_health():
     assert "LCX" in data["available_targets"]
     assert "RCA" in data["available_targets"]
     assert "CardioVista AI" in data["disclaimer"]
+
+def test_api_prefix_health():
+    response = client.get("/api/health")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "healthy"
 
 def test_model_info():
     response = client.get("/model-info")
